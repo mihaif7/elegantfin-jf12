@@ -114,6 +114,11 @@ body:has(.MuiAppBar-root) .libraryPage:not(.noSecondaryNavPage, .itemDetailPage)
     height: auto;
 }
 
+:root:is(.layout-desktop, .layout-mobile) body:has(.MuiAppBar-root) #loginPage {
+    --ef12-loginPageRise: calc(var(--ef12-appBarHeight) + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)));
+    margin-top: calc(-1 * var(--ef12-loginPageRise));
+}
+
 body:has(.MuiAppBar-root) :is([role="button"], [role="tab"], [role="link"],
         [role="menuitem"], [role="menuitemcheckbox"], [role="menuitemradio"],
         [role="option"], [role="switch"], [role="checkbox"], [role="radio"],
@@ -168,25 +173,25 @@ body:has(.MuiAppBar-root) :is([role="button"], .MuiButtonBase-root, .MuiSelect-s
     z-index: -1;
 }
 
-body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root.MuiAppBar-colorTransparent,
-body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root.MuiAppBar-colorDefault {
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root.MuiAppBar-colorTransparent,
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root.MuiAppBar-colorDefault {
     background: none;
     border: 0;
 }
 
-body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::after,
-body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::before {
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root::after,
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root::before {
     content: none;
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
 }
 
-body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root .MuiIconButton-root:not(:hover) {
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIconButton-root:not(:hover) {
     color: var(--fullContrastColor);
     text-shadow: var(--iconShadow);
 }
 
-body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root .MuiIconButton-root:not(:hover) .MuiSvgIcon-root {
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIconButton-root:not(:hover) .MuiSvgIcon-root {
     filter: drop-shadow(0 0 2px hsla(0, 0%, 0%, 0.8)) drop-shadow(1px 1px 0 hsla(0, 0%, 0%, 0.5));
 }
 
