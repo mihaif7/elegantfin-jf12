@@ -6,32 +6,18 @@ on:
       - "v*"
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # release notes are generated from the commit history
 
       - name: Verify the tree matches the tag
+        # The release itself is drafted by docs/release.sh, from a machine that
+        # is already authenticated — so this workflow needs no write access.
         run: python3 .github/verify-release.py "${GITHUB_REF_NAME}"
-
-      - name: Draft the release
-        # A draft, not a published release: the notes are written on GitHub.
-        # This just puts the stylesheet and a starting point in place.
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh release create "${GITHUB_REF_NAME}" \
-            --title "${GITHUB_REF_NAME}" \
-            --draft \
-            --generate-notes \
-            "Theme/ElegantFin-jf12-modern-v${GITHUB_REF_NAME#v}.css"
-          echo "Draft release ready to edit and publish:" >> "$GITHUB_STEP_SUMMARY"
-          gh release view "${GITHUB_REF_NAME}" --json url --jq .url >> "$GITHUB_STEP_SUMMARY"
 
       - name: Purge the jsDelivr edge cache
         # Branch URLs are cached at the edge for 12h. Purging makes the new
