@@ -704,3 +704,10 @@ body:has(.MuiAppBar-root) .homeSectionsContainer div:not(.sectionTitleContainer-
     bottom: 0;
     height: auto;
 }
+
+.cardScalable > .innerCardFooter.itemProgressBar {
+    position: absolute;
+    inset: auto 1em 1em;
+    width: auto;
+    padding: 0;
+}
