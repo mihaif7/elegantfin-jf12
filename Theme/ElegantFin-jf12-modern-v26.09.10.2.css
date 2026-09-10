@@ -593,6 +593,14 @@ body:has(.MuiAppBar-root) #slides-container .trailer-button {
     border-radius: 0.5rem;
 }
 
+@media only screen and (orientation: landscape) {
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container .dots-container {
+        bottom: 3em;
+        height: 3em;
+        padding-bottom: 0 !important;
+    }
+}
+
 @media (hover: hover) and (pointer: fine) {
     .MuiAppBar-root .MuiButtonBase-root.MuiIconButton-root:hover:not(:disabled),
     .osdHeader .MuiButtonBase-root.MuiIconButton-root:hover:not(:disabled) {
