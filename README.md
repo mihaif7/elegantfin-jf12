@@ -25,7 +25,23 @@ itself still comes from them.
 
 ## Screenshots
 
-_Coming soon._
+ElegantFin on Jellyfin 12's Modern layout, without this sheet and with it. The
+untreated side pushes the poster grid down the page and paints the active tab
+and Play All in MUI's indigo instead of the theme's own colours.
+
+| Before | After |
+|---|---|
+| <img src="Previews/previews-v26.09.10/desktop/movies-before.webp?raw=true" alt="Movies library without the sheet"> | <img src="Previews/previews-v26.09.10/desktop/movies-after.webp?raw=true" alt="Movies library with the sheet"> |
+| <img src="Previews/previews-v26.09.10/mobile/movie-before.webp?raw=true" alt="Item details on mobile without the sheet"> | <img src="Previews/previews-v26.09.10/mobile/movie-after.webp?raw=true" alt="Item details on mobile with the sheet"> |
+
+### With the sheet installed
+
+| Desktop | Mobile |
+|---|---|
+| <div align="center"><img src="Previews/previews-v26.09.10/desktop/home-after.webp?raw=true" alt="Home"><br><strong>Home</strong></div> | <div align="center"><img src="Previews/previews-v26.09.10/mobile/home-after.webp?raw=true" alt="Home on mobile"></div> |
+| <div align="center"><img src="Previews/previews-v26.09.10/desktop/movies-after.webp?raw=true" alt="Movies library"><br><strong>Library</strong></div> | <div align="center"><img src="Previews/previews-v26.09.10/mobile/movies-after.webp?raw=true" alt="Movies library on mobile"></div> |
+| <div align="center"><img src="Previews/previews-v26.09.10/desktop/movie-after.webp?raw=true" alt="Item details"><br><strong>Item details</strong></div> | <div align="center"><img src="Previews/previews-v26.09.10/mobile/movie-after.webp?raw=true" alt="Item details on mobile"></div> |
+| <div align="center"><strong>Drawer</strong><br><em>mobile only</em></div> | <div align="center"><img src="Previews/previews-v26.09.10/mobile/menu-after.webp?raw=true" alt="Navigation drawer on mobile"></div> |
 
 ## Install
 
