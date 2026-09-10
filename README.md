@@ -47,10 +47,6 @@ Line 1 is ElegantFin itself. Line 2 is its Media Bar add-on, it's harmless witho
 the [Media Bar](https://github.com/CodeDevMLH/jellyfin-plugin-media-bar-enhanced)
 plugin, needed with it. Line 3 is this sheet, and it has to come **last**.
 
-Then set **Settings → Display → Display Mode** to `Desktop` or `Mobile` — the
-Modern layout, not `(Legacy)` and hard-refresh. Jellyfin caches custom CSS
-aggressively; on the mobile and TV apps, sign out and back in.
-
 If you'd rather not import from a URL, paste the contents of
 [`ElegantFin-jf12-modern-latest.css`](Theme/ElegantFin-jf12-modern-latest.css)
 in place of that third line.
