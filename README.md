@@ -29,19 +29,30 @@ ElegantFin on Jellyfin 12's Modern layout, without this sheet and with it. The
 untreated side pushes the poster grid down the page and paints the active tab
 and Play All in MUI's indigo instead of the theme's own colours.
 
-| Before | After |
-|---|---|
-| <img src="Previews/previews-v26.09.10/desktop/movies-before.webp?raw=true" alt="Movies library without the sheet"> | <img src="Previews/previews-v26.09.10/desktop/movies-after.webp?raw=true" alt="Movies library with the sheet"> |
-| <img src="Previews/previews-v26.09.10/mobile/movie-before.webp?raw=true" alt="Item details on mobile without the sheet"> | <img src="Previews/previews-v26.09.10/mobile/movie-after.webp?raw=true" alt="Item details on mobile with the sheet"> |
+<details open>
+<summary><strong>Desktop</strong> — home, library, item details, player</summary>
 
-### With the sheet installed
+| | Before | After |
+|---|---|---|
+| **Home** | <img src="Previews/previews-v26.09.10/desktop/home-before.webp?raw=true" alt="Home without the sheet"> | <img src="Previews/previews-v26.09.10/desktop/home-after.webp?raw=true" alt="Home with the sheet"> |
+| **Library** | <img src="Previews/previews-v26.09.10/desktop/movies-before.webp?raw=true" alt="Movies library without the sheet"> | <img src="Previews/previews-v26.09.10/desktop/movies-after.webp?raw=true" alt="Movies library with the sheet"> |
+| **Item details** | <img src="Previews/previews-v26.09.10/desktop/movie-before.webp?raw=true" alt="Item details without the sheet"> | <img src="Previews/previews-v26.09.10/desktop/movie-after.webp?raw=true" alt="Item details with the sheet"> |
+| **Player** | <img src="Previews/previews-v26.09.10/desktop/player-before.webp?raw=true" alt="Video player without the sheet"> | <img src="Previews/previews-v26.09.10/desktop/player-after.webp?raw=true" alt="Video player with the sheet"> |
 
-| Desktop | Mobile |
-|---|---|
-| <div align="center"><img src="Previews/previews-v26.09.10/desktop/home-after.webp?raw=true" alt="Home"><br><strong>Home</strong></div> | <div align="center"><img src="Previews/previews-v26.09.10/mobile/home-after.webp?raw=true" alt="Home on mobile"></div> |
-| <div align="center"><img src="Previews/previews-v26.09.10/desktop/movies-after.webp?raw=true" alt="Movies library"><br><strong>Library</strong></div> | <div align="center"><img src="Previews/previews-v26.09.10/mobile/movies-after.webp?raw=true" alt="Movies library on mobile"></div> |
-| <div align="center"><img src="Previews/previews-v26.09.10/desktop/movie-after.webp?raw=true" alt="Item details"><br><strong>Item details</strong></div> | <div align="center"><img src="Previews/previews-v26.09.10/mobile/movie-after.webp?raw=true" alt="Item details on mobile"></div> |
-| <div align="center"><strong>Drawer</strong><br><em>mobile only</em></div> | <div align="center"><img src="Previews/previews-v26.09.10/mobile/menu-after.webp?raw=true" alt="Navigation drawer on mobile"></div> |
+</details>
+
+<details>
+<summary><strong>Mobile</strong> — home, library, item details, drawer, player</summary>
+
+| | Before | After |
+|---|---|---|
+| **Home** | <img src="Previews/previews-v26.09.10/mobile/home-before.webp?raw=true" alt="Home on mobile without the sheet"> | <img src="Previews/previews-v26.09.10/mobile/home-after.webp?raw=true" alt="Home on mobile with the sheet"> |
+| **Library** | <img src="Previews/previews-v26.09.10/mobile/movies-before.webp?raw=true" alt="Movies library on mobile without the sheet"> | <img src="Previews/previews-v26.09.10/mobile/movies-after.webp?raw=true" alt="Movies library on mobile with the sheet"> |
+| **Item details** | <img src="Previews/previews-v26.09.10/mobile/movie-before.webp?raw=true" alt="Item details on mobile without the sheet"> | <img src="Previews/previews-v26.09.10/mobile/movie-after.webp?raw=true" alt="Item details on mobile with the sheet"> |
+| **Drawer** | <img src="Previews/previews-v26.09.10/mobile/menu-before.webp?raw=true" alt="Navigation drawer without the sheet"> | <img src="Previews/previews-v26.09.10/mobile/menu-after.webp?raw=true" alt="Navigation drawer with the sheet"> |
+| **Player** | <img src="Previews/previews-v26.09.10/mobile/player-before.webp?raw=true" alt="Video player on mobile without the sheet"> | <img src="Previews/previews-v26.09.10/mobile/player-after.webp?raw=true" alt="Video player on mobile with the sheet"> |
+
+</details>
 
 ## Install
 
