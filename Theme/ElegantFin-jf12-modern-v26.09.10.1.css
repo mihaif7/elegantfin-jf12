@@ -678,3 +678,8 @@ body:has(.MuiAppBar-root) .homeSectionsContainer div:not(.sectionTitleContainer-
 :root.layout-tv .mainAnimatedPage {
     overflow-x: clip;
 }
+
+:root.layout-tv #slides-container .backdrop-container {
+    bottom: 0;
+    height: auto;
+}
