@@ -1,0 +1,44 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # release notes are generated from the commit history
+
+      - name: Verify the tree matches the tag
+        run: python3 .github/verify-release.py "${GITHUB_REF_NAME}"
+
+      - name: Draft the release
+        # A draft, not a published release: the notes are written on GitHub.
+        # This just puts the stylesheet and a starting point in place.
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            --title "${GITHUB_REF_NAME}" \
+            --draft \
+            --generate-notes \
+            "Theme/ElegantFin-jf12-modern-v${GITHUB_REF_NAME#v}.css"
+          echo "Draft release ready to edit and publish:" >> "$GITHUB_STEP_SUMMARY"
+          gh release view "${GITHUB_REF_NAME}" --json url --jq .url >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Purge the jsDelivr edge cache
+        # Branch URLs are cached at the edge for 12h. Purging makes the new
+        # version reachable immediately for everyone importing @main.
+        run: |
+          for file in "Theme/ElegantFin-jf12-modern-latest.css" "README.md"; do
+            echo "purging ${file}"
+            curl -sS "https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@main/${file}" | head -c 300
+            echo
+          done

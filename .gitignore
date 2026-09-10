@@ -1,0 +1,5 @@
+# Local working notes — not shipped
+docs/
+
+# macOS
+.DS_Store
