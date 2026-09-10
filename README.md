@@ -33,8 +33,13 @@ Paste into **Dashboard → General → Custom CSS** (server-wide) or
 **Settings → Display → Custom CSS** (just you):
 
 ```css
+/* Main ElegantFin CSS */
 @import url("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/ElegantFin-jellyfin-theme-build-latest-minified.css");
+
+/* ElegantFin Media Bar CSS */
 @import url("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/assets/add-ons/media-bar-plugin-support-latest-min.css");
+
+/* ElegantFin 12 Companion CSS */
 @import url("https://cdn.jsdelivr.net/gh/mihaif7/elegantfin-jf12@main/Theme/ElegantFin-jf12-modern-latest.css");
 ```
 
