@@ -303,6 +303,10 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIcon
     font-weight: 500;
 }
 
+.MuiAppBar-root > .MuiToolbar-root:nth-child(2) .MuiButton-text:not(.MuiButtonGroup-grouped) {
+    min-height: calc(1.75rem + 12px);
+}
+
 .MuiAppBar-root > .MuiToolbar-root:nth-child(2) > .MuiButton-text:first-child {
     margin-inline-start: 0;
 }
