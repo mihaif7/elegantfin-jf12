@@ -479,6 +479,11 @@ body:has(.videoOsd-appBar) .MuiAppBar-root {
     }
 }
 
+.osdHeader .videoOsd-appBar {
+    margin-inline: 0;
+    padding-inline: 0;
+}
+
 .backdrop-container.full-width-video,
 .gradient-overlay.full-width-video {
     mask-image: none;
