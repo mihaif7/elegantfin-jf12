@@ -1,5 +1,7 @@
 # ElegantFin for Jellyfin 12
 
+[![jsDelivr hits](https://data.jsdelivr.com/v1/package/gh/mihaif7/elegantfin-jf12/badge)](https://www.jsdelivr.com/package/gh/mihaif7/elegantfin-jf12)
+
 A companion stylesheet that makes [ElegantFin](https://github.com/lscambo13/ElegantFin)
 work on Jellyfin 12's **Modern** layout, so you don't have to switch Display
 Mode back to Legacy to keep your theme.
