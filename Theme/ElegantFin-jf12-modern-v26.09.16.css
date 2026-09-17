@@ -688,6 +688,154 @@ body:has(.MuiAppBar-root) #slides-container .trailer-button {
     }
 }
 
+body:has(.MuiAppBar-root) #slides-container:has(.slide-content) {
+    container-type: size;
+    container-name: ef12mediabar;
+}
+
+:root:has(#slides-container .slide-content) {
+    --ef12-mediaBarV3Height: var(--ef12-mediaBarHeight, 62vh);
+    --ef12-mediaBarV3Inset: 3.75rem;
+    --ef12-mediaBarV3Rail: 1em;
+    --ef12-mediaBarV3Edge: 0.8em;
+    --ef12-mediaBarV3ChromePitch: 2.7em;
+    --ef12-mediaBarV3ArrowSize: 2.25rem;
+}
+
+:root.layout-mobile #slides-container:has(.slide-content) {
+    --ef12-mediaBarV3ChromeSize: 2rem;
+    --ef12-mediaBarV3Inset: 1.25rem;
+}
+
+:root.layout-desktop #slides-container.layout-plate:has(.slide-content) {
+    --ef12-mediaBarV3Inset: 1rem;
+}
+
+@container ef12mediabar (height < 85vh) {
+    #slides-container:has(.slide-content) .slide-content {
+        bottom: var(--ef12-mediaBarV3Inset);
+        max-height: calc(100% - var(--ef12-mediaBarV3Inset));
+    }
+
+    #slides-container:has(.slide-content) .plot-container {
+        flex: 0 0 auto !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    #slides-container.layout-plate:has(.slide-content) .plate-specs {
+        flex: 0 0 auto !important;
+        overflow: visible !important;
+    }
+
+    #slides-container:has(.slide-content) .ss-settings-toggle {
+        top: var(--ef12-mediaBarV3Rail) !important;
+    }
+
+    #slides-container:has(.slide-content) .arrow {
+        top: auto !important;
+        left: auto !important;
+        bottom: var(--ef12-mediaBarV3Rail) !important;
+        transform: none !important;
+    }
+
+    #slides-container:has(.slide-content) .right-arrow {
+        right: var(--ef12-mediaBarV3Edge) !important;
+    }
+
+    #slides-container:has(.slide-content) .left-arrow {
+        right: calc(var(--ef12-mediaBarV3Edge) + var(--ef12-mediaBarV3ChromePitch)) !important;
+    }
+
+    #slides-container:has(.slide-content) .dots-container {
+        top: auto !important;
+        bottom: calc(var(--ef12-mediaBarV3Rail) + 0.55rem) !important;
+        left: var(--slideshow-gutter) !important;
+        right: auto !important;
+        transform: none !important;
+        height: auto !important;
+        padding: 0 !important;
+    }
+
+    #slides-container.layout-plate:has(.slide-content) .dots-container {
+        display: none !important;
+    }
+
+    #slides-container:has(.slide-content) :is(.backdrop-overlay, .gradient-overlay) {
+        background: none !important;
+    }
+
+    #slides-container:has(.slide-content) .slide {
+        --slideshow-bottom-fade: linear-gradient(to top, #000 0%, #000 100%);
+    }
+
+    :root.layout-desktop #slides-container.layout-plate:has(.slide-content) .slide-content {
+        max-height: calc(100% - var(--ef12-mediaBarV3Inset) * 2);
+    }
+
+    :root.layout-mobile #slides-container:has(.slide-content) :is(.pause-button, .volume-toggle, .ss-settings-toggle) {
+        width: var(--ef12-mediaBarV3ChromeSize) !important;
+        height: var(--ef12-mediaBarV3ChromeSize) !important;
+    }
+
+    :root.layout-mobile #slides-container:has(.slide-content) :is(.pause-button, .volume-toggle, .ss-settings-toggle) i {
+        font-size: var(--ef12-mediaBarV3ChromeSize) !important;
+    }
+
+    :root.layout-mobile #slides-container:has(.slide-content) .dots-container {
+        top: var(--ef12-mediaBarV3Rail) !important;
+        height: var(--ef12-mediaBarV3ChromeSize) !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        align-items: center !important;
+        bottom: auto !important;
+        left: var(--slideshow-gutter) !important;
+        right: auto !important;
+        transform: none !important;
+    }
+
+    :root.layout-mobile #slides-container.layout-plate:has(.slide-content) .plate {
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+    }
+}
+
+body:has(#slides-container .slide-content) .homeSectionsContainer {
+    margin-top: 0 !important;
+    top: calc(var(--ef12-mediaBarV3Height) + var(--ef12-mediaBarGap, 1.25rem) * 2 + 0.75rem) !important;
+}
+
+@container ef12mediabar (height >= 85vh) {
+    :root.layout-desktop #slides-container:has(.slide-content) .slide {
+        --slideshow-bottom-fade: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.55) 12%, #000 30%);
+    }
+
+    :root.layout-desktop #slides-container.layout-plate:has(.slide-content) .plate {
+        -webkit-mask-image: var(--slideshow-bottom-fade) !important;
+        mask-image: var(--slideshow-bottom-fade) !important;
+    }
+
+    :root.layout-desktop #slides-container:has(.slide-content) .slide-content {
+        bottom: 28vh;
+        max-height: calc(100% - 28vh - 2rem);
+    }
+
+    :root.layout-desktop #slides-container:has(.slide-content) .dots-container {
+        top: auto !important;
+        bottom: 22vh !important;
+        left: var(--slideshow-gutter) !important;
+        right: auto !important;
+        transform: none !important;
+    }
+
+    :root.layout-desktop #slides-container:has(.slide-content) .arrow {
+        top: auto !important;
+        bottom: 22vh !important;
+        transform: none !important;
+    }
+}
+
 @media (hover: hover) and (pointer: fine) {
     .MuiAppBar-root .MuiButtonBase-root.MuiIconButton-root:hover:not(:disabled),
     .osdHeader .MuiButtonBase-root.MuiIconButton-root:hover:not(:disabled) {
