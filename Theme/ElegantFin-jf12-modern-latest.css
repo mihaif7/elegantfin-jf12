@@ -576,19 +576,22 @@ body:has(.videoOsd-appBar) .MuiAppBar-root {
     --ef12-mediaBarV2StockDrop: max(0px, calc(var(--ef12-mediaBarV2Height)
         - var(--ef12-mediaBarHeight) - var(--ef12-mediaBarGap) - 5rem));
     --ef12-mediaBarV2StockRail: calc(var(--ef12-appBarHeight)
-        + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)));
+        + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px))
+        + 2.5rem + 1rem);
 }
 
 @container ef12mediabar (width >= 96.7vw) {
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container:not(:has(.slide-content)) :is(.pause-button, .mute-button) {
+        top: var(--ef12-mediaBarV2StockRail) !important;
+    }
+
     @media only screen and (max-width: 767px) and (orientation: portrait) {
         body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container:not(:has(.slide-content)) .slide {
             padding-bottom: calc(var(--ef12-mediaBarV2StockDrop) + 1.5em);
         }
         body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container:not(:has(.slide-content)) .dots-container {
-            top: calc(var(--ef12-mediaBarV2StockRail) + 1em + 1.1rem);
-        }
-        body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container:not(:has(.slide-content)) :is(.pause-button, .mute-button) {
-            top: calc(var(--ef12-mediaBarV2StockRail) + 1em) !important;
+            top: calc(var(--ef12-mediaBarV2StockRail) + 1rem);
+            padding-bottom: 1rem !important;
         }
     }
 }
@@ -641,7 +644,7 @@ body:has(.videoOsd-appBar) .MuiAppBar-root {
         padding-inline: 0 !important;
     }
 
-    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container :is(.logo-container, .info-container, .button-container) {
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container :is(.logo-container, .info-container, .genre, .button-container) {
         position: static;
         inset: auto;
         transform: none;
