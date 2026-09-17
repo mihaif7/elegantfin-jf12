@@ -552,10 +552,12 @@ body:has(.videoOsd-appBar) .MuiAppBar-root {
     padding-inline: 0;
 }
 
-.backdrop-container.full-width-video,
-.gradient-overlay.full-width-video {
-    mask-image: none;
-    -webkit-mask-image: none;
+@container ef12mediabar (width < 96.7vw) {
+    .backdrop-container.full-width-video,
+    .gradient-overlay.full-width-video {
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
 }
 
 :root {
@@ -569,21 +571,36 @@ body:has(.videoOsd-appBar) .MuiAppBar-root {
     }
 }
 
-@media not all and (min-width: 75em) {
-    body:has(.MuiAppBar-root):has(#slides-container):not(:has(#slides-container .slide-content)):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container {
-        top: calc(var(--ef12-appBarHeight)
-            + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px))
-            + var(--ef12-mediaBarGap));
-        height: var(--ef12-mediaBarHeight);
-    }
+:root:has(#slides-container) {
+    --ef12-mediaBarV2Height: 90vh;
+    --ef12-mediaBarV2StockDrop: max(0px, calc(var(--ef12-mediaBarV2Height)
+        - var(--ef12-mediaBarHeight) - var(--ef12-mediaBarGap) - 5rem));
+    --ef12-mediaBarV2StockRail: calc(var(--ef12-appBarHeight)
+        + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)));
+}
 
+@container ef12mediabar (width >= 96.7vw) {
+    @media only screen and (max-width: 767px) and (orientation: portrait) {
+        body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container:not(:has(.slide-content)) .slide {
+            padding-bottom: calc(var(--ef12-mediaBarV2StockDrop) + 1.5em);
+        }
+        body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container:not(:has(.slide-content)) .dots-container {
+            top: calc(var(--ef12-mediaBarV2StockRail) + 1em + 1.1rem);
+        }
+        body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container:not(:has(.slide-content)) :is(.pause-button, .mute-button) {
+            top: calc(var(--ef12-mediaBarV2StockRail) + 1em) !important;
+        }
+    }
+}
+
+@media not all and (min-width: 75em) {
     body:has(.MuiAppBar-root):has(#slides-container):not(:has(#slides-container .slide-content)):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) .homeSectionsContainer {
         top: calc(var(--ef12-mediaBarHeight) + var(--ef12-mediaBarGap)) !important;
     }
 }
 
 @media not all and (min-width: 75em) {
-    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container:has(.slide-content) {
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container {
         --appBarHeight: calc((var(--ef12-appBarHeight)
             + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px))) / 2);
     }
@@ -695,7 +712,7 @@ body:has(.MuiAppBar-root) #slides-container .trailer-button {
     }
 }
 
-body:has(.MuiAppBar-root) #slides-container:has(.slide-content) {
+body:has(.MuiAppBar-root) #slides-container {
     container-type: size;
     container-name: ef12mediabar;
 }
