@@ -1,6 +1,8 @@
 # ElegantFin for Jellyfin 12
 
-[![jsDelivr hits](https://data.jsdelivr.com/v1/package/gh/mihaif7/elegantfin-jf12/badge)](https://www.jsdelivr.com/package/gh/mihaif7/elegantfin-jf12)
+[![jsDelivr hits](https://img.shields.io/jsdelivr/gh/hm/mihaif7/elegantfin-jf12?style=flat&logo=jsdelivr&label=jsDelivr%20hits)](https://www.jsdelivr.com/package/gh/mihaif7/elegantfin-jf12)
+[![Release](https://img.shields.io/github/v/release/mihaif7/elegantfin-jf12?style=flat&logo=github&label=Release)](https://github.com/mihaif7/elegantfin-jf12/releases/latest)
+[![Released](https://img.shields.io/github/release-date/mihaif7/elegantfin-jf12?style=flat&label=Released)](https://github.com/mihaif7/elegantfin-jf12/releases/latest)
 
 A companion stylesheet that makes [ElegantFin](https://github.com/lscambo13/ElegantFin)
 work on Jellyfin 12's **Modern** layout, so you don't have to switch Display
