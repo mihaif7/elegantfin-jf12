@@ -711,7 +711,7 @@ body:has(.MuiAppBar-root) #slides-container:has(.slide-content) {
         + var(--ef12-mediaBarGap, 1.25rem) * 2 + 0.75rem);
     --ef12-mediaBarV3BarHeight: var(--slideshow-height, 100vh);
     --ef12-mediaBarV3BarUsed: max(var(--ef12-mediaBarV3BarHeight),
-        calc(var(--ef12-mediaBarV3SectionsTop) + 5rem + 4vh));
+        calc(var(--ef12-mediaBarV3SectionsTop) + 5rem + 20vh));
     --ef12-mediaBarV3StockDrop: calc(var(--ef12-mediaBarV3BarUsed)
         - var(--ef12-mediaBarV3SectionsTop) - 1.5rem);
     --ef12-mediaBarV3StockRow: calc(var(--ef12-mediaBarV3StockDrop) - 2.7rem);
@@ -841,7 +841,7 @@ body:has(#slides-container .slide-content) .homeSectionsContainer {
     }
 }
 
-@container ef12mediabar (width >= 96.7vw) and (height >= 85vh) {
+@container ef12mediabar (width >= 96.7vw) {
     :root:is(.layout-desktop, .layout-mobile) #slides-container:has(.slide-content) .slide-content {
         bottom: var(--ef12-mediaBarV3StockDrop);
         max-height: calc(100% - var(--ef12-mediaBarV3StockDrop) - 2rem);
