@@ -580,6 +580,12 @@ body:has(.videoOsd-appBar) .MuiAppBar-root {
         + 2.5rem + 1rem);
 }
 
+@container ef12mediabar (width < 96.7vw) {
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container:not(:has(.slide-content)) .mute-button {
+        top: 1em !important;
+    }
+}
+
 @container ef12mediabar (width >= 96.7vw) {
     body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container:not(:has(.slide-content)) :is(.pause-button, .mute-button) {
         top: var(--ef12-mediaBarV2StockRail) !important;
