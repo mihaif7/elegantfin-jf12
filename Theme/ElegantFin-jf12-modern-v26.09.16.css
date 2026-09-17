@@ -709,9 +709,16 @@ body:has(.MuiAppBar-root) #slides-container:has(.slide-content) {
     --ef12-mediaBarV3ArrowSize: 2.25rem;
     --ef12-mediaBarV3SectionsTop: calc(var(--ef12-mediaBarV3Height)
         + var(--ef12-mediaBarGap, 1.25rem) * 2 + 0.75rem);
-    --ef12-mediaBarV3StockDrop: calc(var(--slideshow-height, 100vh)
+    --ef12-mediaBarV3BarHeight: var(--slideshow-height, 100vh);
+    --ef12-mediaBarV3BarUsed: max(var(--ef12-mediaBarV3BarHeight),
+        calc(var(--ef12-mediaBarV3SectionsTop) + 5rem + 4vh));
+    --ef12-mediaBarV3StockDrop: calc(var(--ef12-mediaBarV3BarUsed)
         - var(--ef12-mediaBarV3SectionsTop) - 1.5rem);
     --ef12-mediaBarV3StockRow: calc(var(--ef12-mediaBarV3StockDrop) - 2.7rem);
+}
+
+body:has(.MuiAppBar-root) #slides-container:has(.slide-content) {
+    --slideshow-height: var(--ef12-mediaBarV3BarUsed);
 }
 
 :root.layout-mobile #slides-container:has(.slide-content) {
@@ -780,6 +787,7 @@ body:has(.MuiAppBar-root) #slides-container:has(.slide-content) {
 
     #slides-container:has(.slide-content) .slide {
         --slideshow-bottom-fade: linear-gradient(to top, #000 0%, #000 100%);
+        --slideshow-height: var(--ef12-mediaBarV3BarHeight);
     }
 
     :root.layout-desktop #slides-container.layout-plate:has(.slide-content) .slide-content {
@@ -820,7 +828,11 @@ body:has(#slides-container .slide-content) .homeSectionsContainer {
 
 @container ef12mediabar (width >= 96.7vw) {
     :root:is(.layout-desktop, .layout-mobile) #slides-container:has(.slide-content) .slide {
-        --slideshow-bottom-fade: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.55) 12%, #000 30%);
+        --ef12-mediaBarV3FadeSpan: calc(100% - var(--ef12-mediaBarV3SectionsTop) - 5rem);
+        --slideshow-bottom-fade: linear-gradient(to top,
+            transparent 0,
+            rgb(0 0 0 / 0.55) calc(var(--ef12-mediaBarV3FadeSpan) * 0.45),
+            #000 var(--ef12-mediaBarV3FadeSpan));
     }
 
     :root:is(.layout-desktop, .layout-mobile) #slides-container.layout-plate:has(.slide-content) .plate {
