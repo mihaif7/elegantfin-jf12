@@ -570,15 +570,22 @@ body:has(.videoOsd-appBar) .MuiAppBar-root {
 }
 
 @media not all and (min-width: 75em) {
-    body:has(.MuiAppBar-root):has(#slides-container):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container {
+    body:has(.MuiAppBar-root):has(#slides-container):not(:has(#slides-container .slide-content)):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container {
         top: calc(var(--ef12-appBarHeight)
             + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px))
             + var(--ef12-mediaBarGap));
         height: var(--ef12-mediaBarHeight);
     }
 
-    body:has(.MuiAppBar-root):has(#slides-container):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) .homeSectionsContainer {
+    body:has(.MuiAppBar-root):has(#slides-container):not(:has(#slides-container .slide-content)):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) .homeSectionsContainer {
         top: calc(var(--ef12-mediaBarHeight) + var(--ef12-mediaBarGap)) !important;
+    }
+}
+
+@media not all and (min-width: 75em) {
+    body:has(.MuiAppBar-root):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) #slides-container:has(.slide-content) {
+        --appBarHeight: calc((var(--ef12-appBarHeight)
+            + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px))) / 2);
     }
 }
 
@@ -700,6 +707,11 @@ body:has(.MuiAppBar-root) #slides-container:has(.slide-content) {
     --ef12-mediaBarV3Edge: 0.8em;
     --ef12-mediaBarV3ChromePitch: 2.7em;
     --ef12-mediaBarV3ArrowSize: 2.25rem;
+    --ef12-mediaBarV3SectionsTop: calc(var(--ef12-mediaBarV3Height)
+        + var(--ef12-mediaBarGap, 1.25rem) * 2 + 0.75rem);
+    --ef12-mediaBarV3StockDrop: calc(var(--slideshow-height, 100vh)
+        - var(--ef12-mediaBarV3SectionsTop) - 1.5rem);
+    --ef12-mediaBarV3StockRow: calc(var(--ef12-mediaBarV3StockDrop) - 2.7rem);
 }
 
 :root.layout-mobile #slides-container:has(.slide-content) {
@@ -711,7 +723,7 @@ body:has(.MuiAppBar-root) #slides-container:has(.slide-content) {
     --ef12-mediaBarV3Inset: 1rem;
 }
 
-@container ef12mediabar (height < 85vh) {
+@container ef12mediabar (width < 96.7vw) {
     #slides-container:has(.slide-content) .slide-content {
         bottom: var(--ef12-mediaBarV3Inset);
         max-height: calc(100% - var(--ef12-mediaBarV3Inset));
@@ -803,35 +815,37 @@ body:has(.MuiAppBar-root) #slides-container:has(.slide-content) {
 
 body:has(#slides-container .slide-content) .homeSectionsContainer {
     margin-top: 0 !important;
-    top: calc(var(--ef12-mediaBarV3Height) + var(--ef12-mediaBarGap, 1.25rem) * 2 + 0.75rem) !important;
+    top: var(--ef12-mediaBarV3SectionsTop) !important;
 }
 
-@container ef12mediabar (height >= 85vh) {
-    :root.layout-desktop #slides-container:has(.slide-content) .slide {
+@container ef12mediabar (width >= 96.7vw) {
+    :root:is(.layout-desktop, .layout-mobile) #slides-container:has(.slide-content) .slide {
         --slideshow-bottom-fade: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.55) 12%, #000 30%);
     }
 
-    :root.layout-desktop #slides-container.layout-plate:has(.slide-content) .plate {
+    :root:is(.layout-desktop, .layout-mobile) #slides-container.layout-plate:has(.slide-content) .plate {
         -webkit-mask-image: var(--slideshow-bottom-fade) !important;
         mask-image: var(--slideshow-bottom-fade) !important;
     }
+}
 
-    :root.layout-desktop #slides-container:has(.slide-content) .slide-content {
-        bottom: 28vh;
-        max-height: calc(100% - 28vh - 2rem);
+@container ef12mediabar (width >= 96.7vw) and (height >= 85vh) {
+    :root:is(.layout-desktop, .layout-mobile) #slides-container:has(.slide-content) .slide-content {
+        bottom: var(--ef12-mediaBarV3StockDrop);
+        max-height: calc(100% - var(--ef12-mediaBarV3StockDrop) - 2rem);
     }
 
-    :root.layout-desktop #slides-container:has(.slide-content) .dots-container {
+    :root:is(.layout-desktop, .layout-mobile) #slides-container:has(.slide-content) .dots-container {
         top: auto !important;
-        bottom: 22vh !important;
+        bottom: var(--ef12-mediaBarV3StockRow) !important;
         left: var(--slideshow-gutter) !important;
         right: auto !important;
         transform: none !important;
     }
 
-    :root.layout-desktop #slides-container:has(.slide-content) .arrow {
+    :root:is(.layout-desktop, .layout-mobile) #slides-container:has(.slide-content) .arrow {
         top: auto !important;
-        bottom: 22vh !important;
+        bottom: var(--ef12-mediaBarV3StockRow) !important;
         transform: none !important;
     }
 }
