@@ -690,9 +690,16 @@ body:has(.videoOsd-appBar) .MuiAppBar-root {
     }
 }
 
+@media (min-width: 75em) {
+    body:has(.MuiAppBar-root):has(#slides-container):not(:has(#slides-container .slide-content)):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) .homeSectionsContainer {
+        top: calc(var(--appBarHeight) + 1.25em + var(--ef12-mediaBarHeight)
+            + 0.5rem - var(--ef12-appBarHeight)) !important;
+    }
+}
+
 @media not all and (min-width: 75em) {
     body:has(.MuiAppBar-root):has(#slides-container):not(:has(#slides-container .slide-content)):not(.media-bar-mobile-16-9, .media-bar-mobile-4-3) .homeSectionsContainer {
-        top: calc(var(--ef12-mediaBarHeight) + var(--ef12-mediaBarGap)) !important;
+        top: calc(var(--ef12-mediaBarHeight) + 1.25em + 0.5rem) !important;
     }
 }
 
