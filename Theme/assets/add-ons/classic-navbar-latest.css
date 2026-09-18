@@ -11,7 +11,7 @@
     margin-inline: calc(var(--ef12-navGap) / 2);
     padding-block: 0.35rem;
     padding-inline: var(--ef12-navPaddingInline);
-    position: static;
+    position: relative;
 }
 
 .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img)::after {
