@@ -985,7 +985,8 @@ body:has(#slides-container .slide-content) .homeSectionsContainer {
 
 @media (hover: hover) and (pointer: fine) {
     .MuiAppBar-root .MuiButtonBase-root.MuiIconButton-root:hover:not(:disabled),
-    .osdHeader .MuiButtonBase-root.MuiIconButton-root:hover:not(:disabled) {
+    .osdHeader .MuiButtonBase-root.MuiIconButton-root:hover:not(:disabled),
+    .cardOverlayButton-br .MuiButtonBase-root.MuiIconButton-root:hover:not(:disabled) {
         background-color: var(--hoverBackgroundColor);
         color: var(--zeroContrastColor);
         text-shadow: none;
@@ -1060,6 +1061,22 @@ body:has(#slides-container .slide-content) .homeSectionsContainer {
 #popupPreviewButton::before {
     content: var(--ef12-episodePreviewIcon);
     font-size: 1.25em;
+}
+
+.cardOverlayButton-br > button.cardOverlayButton {
+    box-sizing: border-box;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    position: relative;
+}
+
+.cardOverlayButton-br > button.cardOverlayButton > .cardOverlayButtonIcon,
+.cardOverlayButton-br > button.cardOverlayButton > .MuiSvgIcon-root {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .itemExternalLinks > .seerr-link {
