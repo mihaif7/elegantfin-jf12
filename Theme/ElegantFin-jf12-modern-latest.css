@@ -371,6 +371,10 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIcon
     margin-right: 0.75rem;
 }
 
+.MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) .MuiTouchRipple-root {
+    display: none;
+}
+
 .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) .MuiButton-startIcon > img {
     max-height: var(--ef12-brandLogoSize) !important;
     max-width: var(--ef12-brandLogoSize) !important;
