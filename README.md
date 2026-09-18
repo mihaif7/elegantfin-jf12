@@ -120,6 +120,16 @@ nothing changes.
 </tbody>
 </table>
 
+## Supported plugins
+
+Plugins this sheet styles for the Modern layout:
+
+- [Media Bar](https://github.com/IAmParadox27/jellyfin-plugin-media-bar), with or without ElegantFin's Media Bar add-on
+- [Media Bar Enhanced](https://github.com/CodeDevMLH/jellyfin-plugin-media-bar-enhanced), with or without ElegantFin's Media Bar add-on
+- [Jellyfin Enhanced](https://github.com/n00bcodr/Jellyfin-Enhanced)
+- [InPlayerEpisodePreview](https://github.com/Namo2/InPlayerEpisodePreview)
+- [Plugin Update Notifier](https://github.com/mihaif7/jellyfin-plugin-update-notifier)
+
 ## Updating
 
 The URL above tracks the newest release, so updates arrive on their own, but
