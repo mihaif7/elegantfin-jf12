@@ -171,6 +171,7 @@ Override any of these in your own Custom CSS, after the imports:
 | `--ef12-surfaceRadius` | `1rem` | Menu / popover / dialog corners |
 | `--ef12-surfaceBlur` | `--blurDefault` | Blur behind menus and dialogs; `none` to disable |
 | `--ef12-menuGap` | `0.5rem` | Space between a dropdown and the control that opened it |
+| `--ef12-userMenuFontSize` | `1.15rem` | Avatar menu type on narrow viewports, where MUI holds the rows at 48px |
 | `--ef12-osdToolbarHeight` | `5rem` | Toolbar height inside the video OSD header |
 | `--ef12-episodePreviewIcon` | `"video_library"` | Glyph for the in-player episode picker |
 | `--ef12-linkMarkHeight` | `1.4cap` | Logo mark height in the external-links row |

@@ -28,6 +28,7 @@
     --ef12-elsewhereLabel: none;
     --ef12-ratingsGridOpen: 0.24s;
     --ef12-itemBarEnter: 0.35s;
+    --ef12-userMenuFontSize: 1.15rem;
 }
 
 :root,
@@ -544,10 +545,37 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiButt
     margin-top: var(--ef12-menuGap);
 }
 
+#app-user-menu .MuiPopover-paper {
+    margin-top: calc(var(--ef12-menuGap) + 0.5rem);
+}
+
 .MuiMenuItem-root,
 .MuiAutocomplete-option {
     border-radius: var(--smallRadius);
     margin-inline: 0.3em;
+}
+
+@media not all and (min-width: 600px) {
+    #app-user-menu .MuiMenuItem-root {
+        font-size: var(--ef12-userMenuFontSize);
+    }
+
+    #app-user-menu .MuiMenuItem-root .MuiTypography-root {
+        font-size: inherit;
+    }
+
+    #app-user-menu .MuiMenuItem-root .MuiSvgIcon-root {
+        font-size: 1.45em;
+    }
+
+    #app-user-menu .MuiMenuItem-root .MuiListItemIcon-root {
+        min-width: 2.25em;
+    }
+
+    #app-user-menu .MuiPopover-paper {
+        left: auto !important;
+        right: calc(max(3.3%, env(safe-area-inset-right)) + 1rem);
+    }
 }
 
 .MuiMenuItem-root.Mui-selected,
