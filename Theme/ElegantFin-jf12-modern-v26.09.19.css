@@ -1440,3 +1440,19 @@ body #jf-hover-tooltip {
     color: var(--textColor);
 }
 
+.itemLinearProgress.MuiLinearProgress-root {
+    -webkit-backdrop-filter: var(--blurLarge);
+    backdrop-filter: var(--blurLarge);
+    background-color: var(--osdSeekBarBufferedColorAlpha);
+    border-radius: var(--largeRadius);
+    height: 0.35em;
+    inset: auto 2em 2em;
+    overflow: hidden;
+    width: auto;
+}
+
+.itemLinearProgress .MuiLinearProgress-bar {
+    background-color: var(--cardResumeProgressColor);
+    border-radius: 0 var(--largeRadius) var(--largeRadius) 0;
+    opacity: 0.75;
+}
