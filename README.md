@@ -120,10 +120,6 @@ nothing changes.
 </tbody>
 </table>
 
-Desktop only, and not because it was left undone: the mobile layout has no
-server button in the bar at all (`AppToolbar` renders it only when the drawer
-is absent), so there is nothing there for the add-on to put back.
-
 Order is the whole mechanism: an add-on restates the rules it is replacing, so
 it has to come after the sheet it is replacing them in. Pinning works the same
 way as above: name a version in both URLs and neither will move.
