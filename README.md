@@ -129,6 +129,7 @@ Plugins this sheet styles for the Modern layout:
 - [Jellyfin Enhanced](https://github.com/n00bcodr/Jellyfin-Enhanced)
 - [InPlayerEpisodePreview](https://github.com/Namo2/InPlayerEpisodePreview)
 - [Plugin Update Notifier](https://github.com/mihaif7/jellyfin-plugin-update-notifier)
+- [Jellyfin Episodes Ratings Grid](https://github.com/Damocles-fr/jellyfin-imdb-episodes-heatmap-ratings-grid), loaded through the [JavaScript Injector](https://github.com/n00bcodr/Jellyfin-JavaScript-Injector)
 
 ## Updating
 
@@ -170,11 +171,14 @@ Override any of these in your own Custom CSS, after the imports:
 | `--ef12-surfaceRadius` | `1rem` | Menu / popover / dialog corners |
 | `--ef12-surfaceBlur` | `--blurDefault` | Blur behind menus and dialogs; `none` to disable |
 | `--ef12-menuGap` | `0.5rem` | Space between a dropdown and the control that opened it |
+| `--ef12-userMenuFontSize` | `1.15rem` | Avatar menu type on narrow viewports, where MUI holds the rows at 48px |
 | `--ef12-osdToolbarHeight` | `5rem` | Toolbar height inside the video OSD header |
 | `--ef12-episodePreviewIcon` | `"video_library"` | Glyph for the in-player episode picker |
 | `--ef12-linkMarkHeight` | `1.4cap` | Logo mark height in the external-links row |
 | `--ef12-mediaBarHeight` | `62vh` | Media Bar only: bar height, and what the home sections clear |
 | `--ef12-mediaBarGap` | `1.25rem` | Media Bar only: the gap above and below the bar |
+| `--ef12-itemBarEnter` | `0.35s` | How long an item page's app bar takes to fade up to home's background on scroll |
+| `--ef12-ratingsGridOpen` | `0.24s` | Episodes Ratings Grid only: how long its card takes to unfold; `0s` for no animation |
 
 Upstream ElegantFin's own knobs still work too, including the solid and fully
 transparent app bar presets from its README.
