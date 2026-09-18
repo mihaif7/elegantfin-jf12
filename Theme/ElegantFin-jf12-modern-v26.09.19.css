@@ -27,6 +27,7 @@
     --ef12-linkMarkHeight: 1.4cap;
     --ef12-elsewhereLabel: none;
     --ef12-ratingsGridOpen: 0.24s;
+    --ef12-itemBarEnter: 0.35s;
 }
 
 :root,
@@ -239,11 +240,45 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root.MuiAppBa
     border: 0;
 }
 
-body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root::after,
-body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root::before {
+body:has(#loginPage:not(.hide)) .MuiAppBar-root::after,
+body:has(#loginPage:not(.hide)) .MuiAppBar-root::before {
     content: none;
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
+}
+
+body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::before,
+body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::after {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::before {
+    content: "";
+    background: var(--appBarColor, var(--headerBackground));
+}
+
+body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::after {
+    content: var(--appBarSeamlessBlur, "");
+    -webkit-backdrop-filter: var(--appBarBlurStrength, var(--blurLargest));
+    backdrop-filter: var(--appBarBlurStrength, var(--blurLargest));
+    -webkit-mask: var(--headerBlurMask);
+    mask: var(--headerBlurMask);
+}
+
+body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root.MuiAppBar-colorDefault::before,
+body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root.MuiAppBar-colorDefault::after {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::before,
+    body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root::after {
+        transition: opacity var(--ef12-itemBarEnter) ease;
+    }
 }
 
 body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIconButton-root:not(:hover) {
