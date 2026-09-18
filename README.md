@@ -120,10 +120,6 @@ nothing changes.
 </tbody>
 </table>
 
-Order is the whole mechanism: an add-on restates the rules it is replacing, so
-it has to come after the sheet it is replacing them in. Pinning works the same
-way as above: name a version in both URLs and neither will move.
-
 ## Updating
 
 The URL above tracks the newest release, so updates arrive on their own, but
