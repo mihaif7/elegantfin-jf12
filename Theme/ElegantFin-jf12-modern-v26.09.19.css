@@ -294,6 +294,11 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIcon
     padding-top: max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px));
 }
 
+.MuiAppBar-root.MuiAppBar-positionFixed + div[aria-hidden="true"] {
+    min-height: calc(var(--ef12-appBarHeight)
+        + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)));
+}
+
 .MuiAppBar-root > .MuiToolbar-root:first-child {
     min-height: var(--ef12-appBarHeight);
     gap: 0;
