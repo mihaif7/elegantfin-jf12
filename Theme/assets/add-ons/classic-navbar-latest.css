@@ -1,0 +1,41 @@
+/*! ElegantFin for Jellyfin 12, add-on: classic-navbar | v26.09.18 | GPL-2.0
+ *  https://github.com/mihaif7/elegantfin-jf12
+ *  Load AFTER the companion sheet. Order is what makes it work. */
+
+.MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) {
+    background-color: var(--ef12-navPillBackground);
+    color: var(--textColor);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: normal;
+    margin-inline: calc(var(--ef12-navGap) / 2);
+    padding-block: 0.35rem;
+    padding-inline: var(--ef12-navPaddingInline);
+    position: static;
+}
+
+.MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img)::after {
+    content: none;
+}
+
+.MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) .MuiButton-startIcon {
+    margin-right: 0.6rem;
+}
+
+.MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) .MuiButton-startIcon > img {
+    max-height: calc(var(--ef12-appBarIconSize) * 5 / 6) !important;
+    max-width: calc(var(--ef12-appBarIconSize) * 5 / 6) !important;
+}
+
+.layout-desktop .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img):hover {
+    background-color: var(--hoverTabBackgroundColor);
+    color: var(--zeroContrastColor);
+}
+
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) {
+    text-shadow: none;
+}
+
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) .MuiButton-startIcon > img {
+    filter: none;
+}

@@ -16,7 +16,7 @@ jobs:
 
       - name: Verify the tree matches the tag
         # The release itself is drafted by docs/release.sh, from a machine that
-        # is already authenticated — so this workflow needs no write access.
+        # is already authenticated, so this workflow needs no write access.
         run: python3 .github/verify-release.py "${GITHUB_REF_NAME}"
 
       - name: Purge the jsDelivr edge cache
