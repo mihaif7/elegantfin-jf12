@@ -26,6 +26,7 @@
     --ef12-iconButtonGap: 0.58rem;
     --ef12-linkMarkHeight: 1.4cap;
     --ef12-elsewhereLabel: none;
+    --ef12-detailsSectionGap: 2.25rem;
     --ef12-ratingsGridOpen: 0.24s;
     --ef12-itemBarEnter: 0.35s;
     --ef12-userMenuFontSize: 1.15rem;
@@ -123,6 +124,37 @@ body:has(.MuiAppBar-root) .libraryPage:not(.noSecondaryNavPage, .itemDetailPage)
 :root.layout-desktop body:has(.MuiAppBar-root) #itemDetailPage .detailSection > .nextUpSection,
 :root.layout-desktop body:has(.MuiAppBar-root) #itemDetailPage .detailSection > #listChildrenCollapsible {
     grid-column: 1 / -1;
+}
+
+body:has(.MuiAppBar-root) #itemDetailPage .detailPagePrimaryContent > .detailSection > .itemDetailsGroup:not(:has(> :not(:empty))) {
+    display: none;
+}
+
+body:has(.MuiAppBar-root) #itemDetailPage .detailPagePrimaryContent > .detailSection {
+    margin-bottom: 0;
+    row-gap: var(--ef12-detailsSectionGap);
+}
+
+body:has(.MuiAppBar-root) #itemDetailPage .detailPagePrimaryContent > .detailSection > * {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+body:has(.MuiAppBar-root) #itemDetailPage .detailPageSecondaryContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ef12-detailsSectionGap);
+    margin-top: var(--ef12-detailsSectionGap);
+}
+
+body:has(.MuiAppBar-root) #itemDetailPage .detailPageSecondaryContainer > * {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+body:has(.MuiAppBar-root) #itemDetailPage .tmdb-reviews-section {
+    margin-bottom: 0;
+    margin-top: var(--ef12-detailsSectionGap);
 }
 
 :root.layout-mobile:has(.MuiAppBar-root) #myPreferencesMenuPage {
