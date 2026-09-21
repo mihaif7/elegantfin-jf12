@@ -175,6 +175,8 @@ Override any of these in your own Custom CSS, after the imports:
 | `--ef12-osdToolbarHeight` | `5rem` | Toolbar height inside the video OSD header |
 | `--ef12-episodePreviewIcon` | `"video_library"` | Glyph for the in-player episode picker |
 | `--ef12-linkMarkHeight` | `1.4cap` | Logo mark height in the external-links row |
+| `--ef12-detailsSectionGap` | `15px` | Space between an item page's sections |
+| `--ef12-detailsSectionGapDesktop` | `23px` | The same gap, desktop layout only |
 | `--ef12-mediaBarHeight` | `62vh` | Media Bar only: bar height, and what the home sections clear |
 | `--ef12-mediaBarGap` | `1.25rem` | Media Bar only: the gap above and below the bar |
 | `--ef12-itemBarEnter` | `0.35s` | How long an item page's app bar takes to fade up to home's background on scroll |
