@@ -351,7 +351,8 @@ body:has(.selfBackdropPage:not(.hide)) .MuiAppBar-root.MuiAppBar-colorDefault::a
     }
 }
 
-body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIconButton-root:not(:hover) {
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIconButton-root:not(:hover),
+body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiToolbar-root .headerButton.paper-icon-button-light:not(:hover) {
     color: var(--fullContrastColor);
     text-shadow: var(--iconShadow);
 }
