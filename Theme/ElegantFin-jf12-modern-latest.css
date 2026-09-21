@@ -1374,6 +1374,97 @@ body:has(#slides-container .slide-content) .homeSectionsContainer {
     }
 }
 
+body #je-active-streams-panel {
+    background: var(--drawerColor);
+    -webkit-backdrop-filter: var(--ef12-surfaceBlur);
+    backdrop-filter: var(--ef12-surfaceBlur);
+    border: var(--defaultBorder);
+    border-radius: var(--ef12-surfaceRadius);
+    box-shadow: var(--cardShadow);
+    color: var(--textColor);
+}
+
+body #je-active-streams,
+body #je-active-streams-panel {
+    --je-as-accent: var(--accentColor);
+}
+
+#je-active-streams-panel .je-as-panel-header,
+#je-active-streams-panel .je-as-broadcast-form {
+    border-bottom-color: var(--borderColor);
+}
+
+#je-active-streams-panel .je-as-panel-footer {
+    border-top-color: var(--borderColor);
+}
+
+#je-active-streams-panel .je-as-panel-title,
+#je-active-streams-panel .je-as-card-title {
+    color: var(--fullContrastColor);
+}
+
+#je-active-streams-panel .je-as-card-subtitle,
+#je-active-streams-panel .je-as-panel-empty,
+#je-active-streams-panel .je-as-panel-footer,
+#je-active-streams-panel .je-as-progress-time,
+#je-active-streams-panel .je-as-user {
+    color: var(--dimTextColor);
+}
+
+#je-active-streams-panel .je-as-panel-close,
+#je-active-streams-panel .je-as-refresh-btn,
+#je-active-streams-panel .je-as-broadcast-btn {
+    color: var(--dimTextColor);
+}
+
+#je-active-streams-panel .je-as-panel-close:hover,
+#je-active-streams-panel .je-as-refresh-btn:hover {
+    color: var(--textColor);
+}
+
+#je-active-streams-panel .je-as-card {
+    background: var(--lighterGradientPointAlpha);
+    border: var(--defaultBorder);
+    border-radius: var(--smallRadius);
+}
+
+#je-active-streams-panel .je-as-poster,
+#je-active-streams-panel .je-as-poster-placeholder {
+    background: var(--selectorBackgroundColor);
+}
+
+#je-active-streams-panel .je-as-progress-bar {
+    background: var(--selectorBackgroundColor);
+}
+
+#je-active-streams-panel .je-as-state-paused,
+#je-active-streams-panel .je-as-badge-neutral {
+    background: var(--selectorBackgroundColor);
+    color: var(--dimTextColor);
+}
+
+#je-active-streams-panel .je-as-broadcast-input,
+#je-active-streams-panel .je-as-broadcast-textarea,
+#je-active-streams-panel .je-as-broadcast-timeout-input,
+#je-active-streams-panel .je-as-broadcast-cancel {
+    background: var(--selectorBackgroundColor);
+    border: var(--borderWidth) solid var(--lighterBorderColor);
+    border-radius: var(--smallRadius);
+    color: var(--textColor);
+}
+
+#je-active-streams-panel .je-as-broadcast-input::placeholder,
+#je-active-streams-panel .je-as-broadcast-textarea::placeholder {
+    color: var(--dimTextColor);
+}
+
+#je-active-streams-panel .je-as-broadcast-send {
+    background: var(--btnSubmitColor);
+    border: var(--borderWidth) solid var(--btnSubmitBorderColor);
+    border-radius: var(--smallRadius);
+    color: #fff;
+}
+
 body:has(.MuiAppBar-root) .homeSectionsContainer div:not(.sectionTitleContainer-cards) > .sectionTitle-cards {
     padding-bottom: calc(0.3em + 0.2rem);
 }
