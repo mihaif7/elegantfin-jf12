@@ -26,7 +26,8 @@
     --ef12-iconButtonGap: 0.58rem;
     --ef12-linkMarkHeight: 1.4cap;
     --ef12-elsewhereLabel: none;
-    --ef12-detailsSectionGap: 2.25rem;
+    --ef12-detailsSectionGap: 15px;
+    --ef12-detailsSectionGapDesktop: 23px;
     --ef12-ratingsGridOpen: 0.24s;
     --ef12-itemBarEnter: 0.35s;
     --ef12-userMenuFontSize: 1.15rem;
@@ -348,6 +349,10 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIcon
 
 :root.layout-desktop {
     --ef12-appBarHeight: var(--ef12-appBarHeightDesktop);
+}
+
+:root.layout-desktop {
+    --ef12-detailsSectionGap: var(--ef12-detailsSectionGapDesktop);
 }
 
 .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped) {
