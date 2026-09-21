@@ -1076,7 +1076,6 @@ body:has(#slides-container .slide-content) .homeSectionsContainer {
 }
 
 .MuiAppBar-root .MuiIconButton-root,
-.MuiAppBar-root .MuiToolbar-root .headerButton.paper-icon-button-light,
 .osdHeader .MuiIconButton-root {
     margin-inline: calc(var(--ef12-iconButtonGap) / 2);
 }
@@ -1096,6 +1095,7 @@ body:has(#slides-container .slide-content) .homeSectionsContainer {
     width: 2.36rem !important;
     height: 2.36rem !important;
     padding: 0 !important;
+    margin-inline: calc(var(--ef12-iconButtonGap) / 2) !important;
 }
 
 .MuiAppBar-root .MuiToolbar-root .headerButton.paper-icon-button-light > .material-icons {
