@@ -1235,12 +1235,14 @@ body:has(#slides-container .slide-content) .homeSectionsContainer {
  * an item page, and its active-streams panel.
  * ══════════════════════════════════════════════════════════════════════════ */
 
-.itemExternalLinks > .seerr-link {
+.itemExternalLinks > .seerr-link,
+.itemExternalLinks > .arr-link {
     display: inline-block;
     margin-inline-start: 0.29em;
 }
 
-.itemExternalLinks > .seerr-link > .seerr-link-img {
+.itemExternalLinks > .seerr-link > .seerr-link-img,
+.itemExternalLinks > .arr-link > .arr-link-img {
     display: inline;
     width: auto !important;
     height: var(--ef12-linkMarkHeight) !important;
