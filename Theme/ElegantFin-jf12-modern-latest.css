@@ -1357,6 +1357,23 @@ body:has(#slides-container .slide-content) .homeSectionsContainer {
     color: var(--textColor);
 }
 
+@supports (anchor-name: --a) and (left: anchor(center)) {
+    body:has(.MuiAppBar-root) #je-active-streams {
+        anchor-name: --ef12-activeStreamsButton;
+    }
+
+    body:has(.MuiAppBar-root) #je-active-streams-panel {
+        --ef12-activeStreamsPanelHalf: min(180px, (100vw - 16px) / 2);
+        left: clamp(
+            calc(12px + var(--ef12-activeStreamsPanelHalf)),
+            anchor(center),
+            calc(100vw - 12px - var(--ef12-activeStreamsPanelHalf)));
+        position-anchor: --ef12-activeStreamsButton;
+        right: auto;
+        translate: -50%;
+    }
+}
+
 body:has(.MuiAppBar-root) .homeSectionsContainer div:not(.sectionTitleContainer-cards) > .sectionTitle-cards {
     padding-bottom: calc(0.3em + 0.2rem);
 }
