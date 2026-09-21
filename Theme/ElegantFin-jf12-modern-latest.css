@@ -120,6 +120,11 @@ body:has(.MuiAppBar-root) .libraryPage:not(.noSecondaryNavPage, .itemDetailPage)
     height: min(25vh, calc(var(--ef12-detailsTitleSpace) - 0.5em));
 }
 
+:root.layout-desktop body:has(.MuiAppBar-root) #itemDetailPage .detailSection > .nextUpSection,
+:root.layout-desktop body:has(.MuiAppBar-root) #itemDetailPage .detailSection > #listChildrenCollapsible {
+    grid-column: 1 / -1;
+}
+
 :root.layout-mobile:has(.MuiAppBar-root) #myPreferencesMenuPage {
     padding-top: 0 !important;
 }
