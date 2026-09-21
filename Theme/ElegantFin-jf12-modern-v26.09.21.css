@@ -2,6 +2,12 @@
  *  https://github.com/mihaif7/elegantfin-jf12
  *  Load AFTER upstream ElegantFin. See the README for install. */
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * 1. Knobs
+ * The sheet's own variables: the sizes, timings and toggles every section
+ * below reads.
+ * ══════════════════════════════════════════════════════════════════════════ */
+
 :root {
     --ef12-appBarHeight: 4rem;
     --ef12-appBarHeightDesktop: 4.5rem;
@@ -32,6 +38,12 @@
     --ef12-itemBarEnter: 0.35s;
     --ef12-userMenuFontSize: 1.15rem;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 2. Token bridge: ElegantFin → Jellyfin 12 palette
+ * ElegantFin's palette, re-declared where MUI's generated jf-* variables
+ * would otherwise outrank it.
+ * ══════════════════════════════════════════════════════════════════════════ */
 
 :root,
 :root[data-theme] {
@@ -89,9 +101,22 @@
     --jf-palette-dividerChannel: 0 0 0;
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * 3. Typography
+ * The font on MUI components, which declare their own rather than
+ * inheriting.
+ * ══════════════════════════════════════════════════════════════════════════ */
+
 [class*="Mui"]:not(.MuiIcon-root) {
     font-family: inherit;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 4. Modern layout fixes
+ * Item and library page geometry: the page's top offset, the clear logo's
+ * band, Next Up and the season list, and the space between an item page's
+ * sections.
+ * ══════════════════════════════════════════════════════════════════════════ */
 
 body:has(.MuiAppBar-root) .libraryPage:not(.noSecondaryNavPage, .itemDetailPage) {
     padding-top: 0 !important;
@@ -231,6 +256,12 @@ body:has(.MuiAppBar-root) :is([role="button"], .MuiButtonBase-root, .MuiSelect-s
     cursor: default;
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * 5. App bar
+ * The MUI header: its colour on scroll, its height, the two-row bars and the
+ * masthead.
+ * ══════════════════════════════════════════════════════════════════════════ */
+
 .MuiAppBar-root.MuiAppBar-colorTransparent,
 .MuiAppBar-root.MuiAppBar-colorDefault {
     background: var(--appBarColor, var(--headerBackground));
@@ -355,6 +386,11 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIcon
     --ef12-detailsSectionGap: var(--ef12-detailsSectionGapDesktop);
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * 6. Library navigation buttons
+ * The per-library buttons in the app bar, as ElegantFin's pills.
+ * ══════════════════════════════════════════════════════════════════════════ */
+
 .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped) {
     background-color: var(--ef12-navPillBackground);
     border-radius: var(--ef12-navRadius);
@@ -430,6 +466,11 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiButt
 body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) .MuiButton-startIcon > img {
     filter: drop-shadow(0 0 2px hsla(0, 0%, 0%, 0.8)) drop-shadow(1px 1px 0 hsla(0, 0%, 0%, 0.5));
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 7. Library toolbar
+ * The sort, filter and view button groups in a library page's second row.
+ * ══════════════════════════════════════════════════════════════════════════ */
 
 .MuiAppBar-root .MuiButtonGroup-contained {
     background: var(--btnPlayColor);
@@ -516,6 +557,11 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiButt
     padding-inline: 0.7rem;
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * 8. Drawer
+ * The navigation drawer, rendered only below the md breakpoint.
+ * ══════════════════════════════════════════════════════════════════════════ */
+
 .MuiDrawer-root .MuiDrawer-paper {
     background-color: var(--drawerColor);
     background-image: none;
@@ -568,6 +614,12 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiButt
     font-weight: 500;
     line-height: 48px;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 9. Menus, popovers, dialogs, tooltips
+ * Every floating surface (menus, popovers, dialogs and tooltips), plus the
+ * avatar menu on a narrow viewport.
+ * ══════════════════════════════════════════════════════════════════════════ */
 
 .MuiMenu-paper,
 .MuiPopover-paper,
@@ -655,6 +707,11 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiButt
     background-color: var(--multiSelectOverlayColor);
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * 10. Form controls
+ * Filled inputs, switches and the focus ring.
+ * ══════════════════════════════════════════════════════════════════════════ */
+
 .MuiFilledInput-root {
     background-color: var(--textareaBackgroundColor);
     border: var(--defaultBorder);
@@ -676,6 +733,11 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiButt
     outline: var(--borderWidthDouble) solid var(--highlightOutlineColor);
     outline-offset: 2px;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 11. Video player
+ * The video player's chrome and its OSD.
+ * ══════════════════════════════════════════════════════════════════════════ */
 
 body:has(.videoPlayerContainer-onTop) .MuiAppBar-root,
 body:has(.videoPlayerContainer-onTop) .MuiAppBar-root + div[aria-hidden="true"],
@@ -715,6 +777,12 @@ body:has(.videoOsd-appBar) .MuiAppBar-root + div[aria-hidden="true"] {
     margin-inline: 0;
     padding-inline: 0;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 12. Media Bar plugin
+ * The Media Bar plugin's slideshow and the home page beneath it. Inert
+ * without the plugin.
+ * ══════════════════════════════════════════════════════════════════════════ */
 
 @container ef12mediabar (width < 96.7vw) {
     .backdrop-container.full-width-video,
@@ -1059,6 +1127,12 @@ body:has(#slides-container .slide-content) .homeSectionsContainer {
     }
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * 13. Icon buttons
+ * Icon buttons in the app bar, the OSD and a card's overlay: hover circle,
+ * box size, spacing and two glyph substitutions.
+ * ══════════════════════════════════════════════════════════════════════════ */
+
 @media (hover: hover) and (pointer: fine) {
     .MuiAppBar-root .MuiButtonBase-root.MuiIconButton-root:hover:not(:disabled),
     .osdHeader .MuiButtonBase-root.MuiIconButton-root:hover:not(:disabled),
@@ -1154,6 +1228,12 @@ body:has(#slides-container .slide-content) .homeSectionsContainer {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 14. Jellyfin Enhanced
+ * The Jellyfin Enhanced plugin: its Seerr link, streaming bar and reviews on
+ * an item page, and its active-streams panel.
+ * ══════════════════════════════════════════════════════════════════════════ */
 
 .itemExternalLinks > .seerr-link {
     display: inline-block;
@@ -1479,9 +1559,20 @@ body #je-active-streams-panel {
     color: #fff;
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * 15. Home section titles
+ * The space under the home page's two kinds of section heading.
+ * ══════════════════════════════════════════════════════════════════════════ */
+
 body:has(.MuiAppBar-root) .homeSectionsContainer div:not(.sectionTitleContainer-cards) > .sectionTitle-cards {
     padding-bottom: calc(0.3em + 0.2rem);
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 16. Legacy TV layout
+ * The TV display mode, which never gets the MUI chrome. The one section not
+ * about the Modern layout.
+ * ══════════════════════════════════════════════════════════════════════════ */
 
 :root.layout-tv .mainAnimatedPage {
     overflow-x: clip;
@@ -1492,12 +1583,22 @@ body:has(.MuiAppBar-root) .homeSectionsContainer div:not(.sectionTitleContainer-
     height: auto;
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * 17. In-player episode picker
+ * The InPlayerEpisodePreview plugin's episode picker inside the player.
+ * ══════════════════════════════════════════════════════════════════════════ */
+
 .cardScalable > .innerCardFooter.itemProgressBar {
     position: absolute;
     inset: auto 1em 1em;
     width: auto;
     padding: 0;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 18. Episodes Ratings Grid
+ * The Episodes Ratings Grid userscript's card on a series page.
+ * ══════════════════════════════════════════════════════════════════════════ */
 
 body [data-jf-ieg-root="1"] {
     --axis: var(--selectorBackgroundColor);
@@ -1643,6 +1744,12 @@ body #jf-hover-tooltip {
 #jf-hover-tooltip .jf-tooltip-overview {
     color: var(--textColor);
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 19. Card progress bars
+ * The resume bar on a partly-watched card in the Modern layout's library
+ * views.
+ * ══════════════════════════════════════════════════════════════════════════ */
 
 .itemLinearProgress.MuiLinearProgress-root {
     -webkit-backdrop-filter: var(--blurLarge);
