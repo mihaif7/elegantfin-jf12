@@ -501,6 +501,21 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiButt
     color: var(--zeroContrastColor) !important;
 }
 
+.MuiAppBar-root .MuiButton-contained:not(.MuiButtonGroup-grouped) {
+    background: var(--btnPlayColor) !important;
+    border: 0 !important;
+    border-radius: var(--ef12-navRadius);
+    box-shadow: none;
+    color: var(--zeroContrastColor) !important;
+    font-size: 1rem;
+    font-weight: 400;
+    padding-inline: var(--ef12-navPaddingInline);
+}
+
+.layout-desktop .MuiAppBar-root .MuiButton-contained:not(.MuiButtonGroup-grouped):hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)), var(--btnPlayColor) !important;
+}
+
 .MuiAppBar-root .MuiButtonGroup-text {
     background: var(--ef12-navPillBackground);
     border-radius: var(--ef12-navRadius);
@@ -775,8 +790,15 @@ body:has(.videoOsd-appBar) .MuiAppBar-root + div[aria-hidden="true"] {
 }
 
 .osdHeader .videoOsd-appBar {
+    container-type: inline-size;
     margin-inline: 0;
-    padding-inline: 0;
+    padding-inline: 0.8em;
+}
+
+@container (max-width: 62em) {
+    .osdHeader .videoOsd-appBar .MuiIconButton-root {
+        margin-inline: 0;
+    }
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
