@@ -790,8 +790,15 @@ body:has(.videoOsd-appBar) .MuiAppBar-root + div[aria-hidden="true"] {
 }
 
 .osdHeader .videoOsd-appBar {
+    container-type: inline-size;
     margin-inline: 0;
-    padding-inline: 0;
+    padding-inline: 0.8em;
+}
+
+@container (max-width: 62em) {
+    .osdHeader .videoOsd-appBar .MuiIconButton-root {
+        margin-inline: 0;
+    }
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
