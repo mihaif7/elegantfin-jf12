@@ -447,6 +447,10 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiIcon
     margin-inline: 0;
 }
 
+.MuiAppBar-root > .MuiToolbar-root:first-child > .MuiIconButton-root + .MuiStack-root {
+    margin-inline-start: calc(1rem - var(--ef12-iconButtonGap) / 2);
+}
+
 .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):has(.MuiButton-startIcon > img) .MuiButton-startIcon {
     margin-right: 0.75rem;
 }
