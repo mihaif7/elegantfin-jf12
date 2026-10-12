@@ -1792,3 +1792,19 @@ body #jf-hover-tooltip {
     border-radius: 0 var(--largeRadius) var(--largeRadius) 0;
     opacity: 0.75;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 20. Engines without :has()
+ * Nothing in a current browser. Restatements of rules above for an engine
+ * that cannot read them — Jellyfin Media Player 1.12.
+ * ══════════════════════════════════════════════════════════════════════════ */
+
+@supports not selector(:has(*)) {
+    .videoPlayerContainer-onTop ~ #reactRoot .MuiAppBar-root,
+    .videoPlayerContainer-onTop ~ #reactRoot .MuiAppBar-root + div[aria-hidden="true"],
+    .MuiAppBar-root:empty,
+    .MuiAppBar-root:empty + div[aria-hidden="true"] {
+        display: none;
+    }
+
+}
