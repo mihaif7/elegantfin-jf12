@@ -2185,6 +2185,31 @@ body #jf-hover-tooltip {
         background-size: clamp(0px, var(--ef12-mbShape), 100%) 100% !important;
     }
 
+    #slides-container .slide {
+        --ef12-mbV3FadeSwitch: ((100% - 75vh) * 9999);
+        --ef12-mbV3FadeSpan: calc(100% - var(--ef12-mediaBarV3SectionsTop) - 5rem);
+        --slideshow-bottom-fade: linear-gradient(to top,
+            transparent 0,
+            rgb(0 0 0 / 0.55) clamp(0px, var(--ef12-mbV3FadeSwitch), var(--ef12-mbV3FadeSpan) * 0.45),
+            #000 clamp(0px, var(--ef12-mbV3FadeSwitch), var(--ef12-mbV3FadeSpan)));
+    }
+    :root.layout-desktop #slides-container.layout-plate .plate,
+    :root.layout-mobile #slides-container.layout-plate .plate {
+        -webkit-mask-image: var(--slideshow-bottom-fade) !important;
+        mask-image: var(--slideshow-bottom-fade) !important;
+    }
+
+    #slides-container.layout-plate .slide > .video-container.active ~ .backdrop-container .backdrop {
+        opacity: 0;
+    }
+
+    #slides-container .video-container > .video-player {
+        width: max(100%, 177.78vh, 100vw);
+        height: max(100%, 100vh, 56.25vw);
+        min-width: 0;
+        min-height: 0;
+    }
+
     :root {
         --ef12-mbV3SectionsTop: calc(var(--slideshow-content-top) * 0 + var(--ef12-mediaBarV3SectionsTop));
     }
