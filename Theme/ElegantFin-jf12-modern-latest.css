@@ -1918,6 +1918,23 @@ body #jf-hover-tooltip {
     #reactRoot > .backgroundContainer.withBackdrop ~ div .MuiAppBar-root .MuiIconButton-root:not(:hover) .MuiSvgIcon-root {
         filter: drop-shadow(0 0 2px hsla(0, 0%, 0%, 0.8)) drop-shadow(1px 1px 0 hsla(0, 0%, 0%, 0.5));
     }
+    :root.layout-desktop .MuiAppBar-root ~ main #loginPage,
+    :root.layout-mobile .MuiAppBar-root ~ main #loginPage {
+        --ef12-loginPageRise: calc(var(--ef12-appBarHeight) + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)));
+        margin-top: calc(-1 * var(--ef12-loginPageRise));
+    }
+    :root body.hideMainDrawer #reactRoot .MuiAppBar-root.MuiAppBar-colorTransparent,
+    :root body.hideMainDrawer #reactRoot .MuiAppBar-root.MuiAppBar-colorDefault {
+        background: none;
+        border: 0;
+    }
+    body.hideMainDrawer #reactRoot .MuiAppBar-root::after,
+    body.hideMainDrawer #reactRoot .MuiAppBar-root::before {
+        content: none;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
+
     .layout-desktop .MuiAppBar-root .MuiButton-text:not(.MuiButtonGroup-grouped):not(.MuiButton-textPrimary):not(.MuiButton-sizeLarge):hover {
         background-color: var(--hoverTabBackgroundColor);
         color: var(--zeroContrastColor);
