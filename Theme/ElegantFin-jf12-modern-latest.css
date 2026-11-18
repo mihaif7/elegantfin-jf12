@@ -19,6 +19,11 @@
     --ef12-menuGap: 0.5rem;
     --ef12-surfaceBlur: var(--blurDefault);
     --ef12-navPillBackground: var(--darkerGradientPointAlpha);
+    --ef12-mediaBarScrim:
+        linear-gradient(to right, rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.45) 45%, transparent 75%),
+        linear-gradient(to top, rgb(0 0 0 / 0.45), transparent 60%);
+    --ef12-mediaBarControlsScrim:
+        radial-gradient(26rem 11rem at 100% 0, rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.38) 30%, rgb(0 0 0 / 0.15) 60%, rgb(0 0 0 / 0.04) 85%, transparent);
     --ef12-osdToolbarHeight: 5rem;
     --ef12-detailsBackdropPin: -30%;
     --ef12-navPaddingInline: 1.1rem;
@@ -1073,8 +1078,16 @@ body:has(.MuiAppBar-root) #slides-container:has(.slide-content) {
         display: none !important;
     }
 
-    #slides-container:has(.slide-content) :is(.backdrop-overlay, .gradient-overlay) {
+    #slides-container:has(.slide-content) .backdrop-overlay {
         background: none !important;
+    }
+
+    #slides-container:has(.slide-content) .gradient-overlay {
+        background: var(--ef12-mediaBarControlsScrim), var(--ef12-mediaBarScrim) !important;
+    }
+
+    #slides-container.layout-plate:has(.slide-content) .gradient-overlay {
+        background: var(--ef12-mediaBarControlsScrim) !important;
     }
 
     #slides-container:has(.slide-content) .slide {
@@ -2196,10 +2209,26 @@ body #jf-hover-tooltip {
         overflow: hidden;
     }
     #slides-container .slide > .backdrop-container:first-child .backdrop-overlay,
-    #slides-container .slide > .backdrop-container:first-child ~ .gradient-overlay,
-    #slides-container .slide > .video-container:first-child ~ .backdrop-container .backdrop-overlay,
-    #slides-container .slide > .video-container:first-child ~ .gradient-overlay {
+    #slides-container .slide > .video-container:first-child ~ .backdrop-container .backdrop-overlay {
         background-size: clamp(0px, var(--ef12-mbShape), 100%) 100% !important;
+    }
+    #slides-container .slide > .backdrop-container:first-child ~ .gradient-overlay,
+    #slides-container .slide > .video-container:first-child ~ .gradient-overlay {
+        background-image:
+            linear-gradient(130deg, rgba(29, 29, 29, 0.65) 10%, rgba(29, 29, 29, 0.35) 30%, rgba(29, 29, 29, 0) 100%),
+            var(--ef12-mediaBarControlsScrim), var(--ef12-mediaBarScrim) !important;
+        background-size:
+            clamp(0px, var(--ef12-mbShape), 100%) 100%,
+            clamp(0px, var(--ef12-mbShape) * -1, 100%) 100%, clamp(0px, var(--ef12-mbShape) * -1, 100%) 100%,
+            clamp(0px, var(--ef12-mbShape) * -1, 100%) 100%, clamp(0px, var(--ef12-mbShape) * -1, 100%) 100%,
+            clamp(0px, var(--ef12-mbShape) * -1, 100%) 100% !important;
+        background-repeat: no-repeat !important;
+    }
+    #slides-container.layout-plate .slide > .backdrop-container:first-child ~ .gradient-overlay,
+    #slides-container.layout-plate .slide > .video-container:first-child ~ .gradient-overlay {
+        background-image:
+            linear-gradient(130deg, rgba(29, 29, 29, 0.25) 10%, rgba(29, 29, 29, 0.12) 34%, rgba(29, 29, 29, 0) 100%),
+            var(--ef12-mediaBarControlsScrim) !important;
     }
 
     #slides-container .slide {
