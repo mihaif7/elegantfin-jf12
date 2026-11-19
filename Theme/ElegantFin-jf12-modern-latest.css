@@ -582,6 +582,34 @@ body:has(:is(.selfBackdropPage, #loginPage):not(.hide)) .MuiAppBar-root .MuiButt
     padding-inline: 0.7rem;
 }
 
+.MuiBox-root.alphaPicker-fixed-right {
+    --ef12-alphaPickerBar: calc(var(--ef12-appBarHeight) + var(--ef12-libraryToolbarHeight));
+    top: calc(var(--ef12-alphaPickerBar) + var(--ef12-alphaPickerBarGap, 0px)
+        + max(env(safe-area-inset-top), var(--safe-area-inset-top, 0px)) + 0.5rem);
+    bottom: calc(max(env(safe-area-inset-bottom), var(--safe-area-inset-bottom, 0px)) + 0.5rem);
+}
+
+:root.layout-mobile .MuiBox-root.alphaPicker-fixed-right {
+    --ef12-alphaPickerBarGap: var(--ef12-libraryToolbarGap);
+}
+
+@media not all and (min-width: 600px) {
+    .MuiBox-root.alphaPicker-fixed-right {
+        --ef12-alphaPickerBar: calc(var(--ef12-appBarHeight) + 2 * (1.75rem + 12px) + 4px);
+    }
+}
+
+.MuiBox-root.alphaPicker-fixed-right > .MuiPaper-root {
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+}
+
+.MuiBox-root.alphaPicker-fixed-right .MuiToggleButtonGroup-root,
+.MuiBox-root.alphaPicker-fixed-right .MuiToggleButton-root {
+    min-height: 0;
+}
+
 /* ══════════════════════════════════════════════════════════════════════════
  * 8. Drawer
  * The navigation drawer, rendered only below the md breakpoint.
