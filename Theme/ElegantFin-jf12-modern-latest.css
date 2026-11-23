@@ -249,6 +249,14 @@ body:has(.MuiAppBar-root) #itemDetailPage .tmdb-reviews-section {
     margin-top: calc(-1 * var(--ef12-loginPageRise));
 }
 
+body:has(.MuiAppBar-root):has(.page.withTabs:not(.hide)) .backgroundContainer.withBackdrop {
+    background: var(--darkerGradientPoint);
+}
+
+:root.layout-desktop body:has(.MuiAppBar-root):has(.page.withTabs:not(.hide)) .backdropImage::after {
+    opacity: 0;
+}
+
 body:has(.MuiAppBar-root) :is([role="button"], [role="tab"], [role="link"],
         [role="menuitem"], [role="menuitemcheckbox"], [role="menuitemradio"],
         [role="option"], [role="switch"], [role="checkbox"], [role="radio"],
@@ -1854,6 +1862,17 @@ body #jf-hover-tooltip {
 
     .MuiAppBar-root ~ main .libraryPage:not(.noSecondaryNavPage):not(.itemDetailPage) {
         padding-top: 0 !important;
+    }
+
+    body:not(.withSectionTabs) .page.withTabs::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background: var(--darkerGradientPointAlpha);
+        -webkit-backdrop-filter: var(--blurLargest);
+        backdrop-filter: var(--blurLargest);
+        pointer-events: none;
     }
     :root.layout-desktop .MuiAppBar-root ~ main #itemDetailPage .detailSection > .nextUpSection,
     :root.layout-desktop .MuiAppBar-root ~ main #itemDetailPage .detailSection > #listChildrenCollapsible {
